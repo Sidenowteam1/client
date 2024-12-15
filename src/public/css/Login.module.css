@@ -1,0 +1,47 @@
+/* src/css/login.module.css */
+
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login_form {
+  display: flex; /* Flexbox로 자식 요소를 배치 */
+  flex-direction: column; /* 항목들을 세로로 배치 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #f57c00;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%; /* form_group을 폼 안에서 가로로 맞추기 */
+}
+
+.form_group p {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f57c00;
+}
+
+button {
+  font-size: 16px;
+  width: 30%;
+  margin-top: 20px;
+  width: 100%; /* 버튼을 가로로 꽉 차게 */
+}
+h2 {
+  font-weight: bold;
+  color: #f57c00;
+}

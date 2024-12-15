@@ -1,0 +1,19 @@
+/* components/Button.module.css */
+.button {
+  padding: 5px 13px;
+  background-color: #fdefdf;
+  color: #fd9e4c;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  color: white;
+  background-color: #fd9e4c;
+}
+
+.button:active {
+  background-color: #fdefdf;
+}

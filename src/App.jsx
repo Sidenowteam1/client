@@ -12,7 +12,7 @@ import Signup from "./pages/Signup";
 function App() {
   return (
     <Router>
-      <Header />
+      <Login />
       <Routes>
         <Route path="/pages/Introduce" element={<Introduce />} />
         <Route path="/pages/AboutUs" element={<AboutUs />} />
