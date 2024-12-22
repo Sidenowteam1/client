@@ -1,0 +1,20 @@
+.success-box {
+  background-color: #f7d4bb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7d4bb;
+  border: none;
+  border-radius: 30px;
+  width: 70%;
+  height: 400px;
+  margin: auto;
+  justify-content: center;
+}
+.message {
+  text-align: center; /* 내부 텍스트 중앙 정렬 */
+  padding: 20px; /* 여백 추가 */
+}
+#check {
+  font-size: 100px;
+}

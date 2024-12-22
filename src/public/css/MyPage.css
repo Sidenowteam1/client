@@ -41,6 +41,11 @@
   flex-direction: column;
   margin-left: 20%;
 }
+button.profile {
+  margin-top: 20px;
+  height: 50px;
+  margin-right: 20px;
+}
 
 .buttonGroup {
   flex-direction: column;
