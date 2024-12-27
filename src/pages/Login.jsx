@@ -24,21 +24,23 @@ const Login = () => {
   return (
     <div className={styles.login_container}>
       <form onSubmit={handleSubmit} className={styles.login_form}>
-        <h2>로그인</h2>
+        <img
+          src="/src/public/images/스마트경로당로고.png"
+          alt="스마트경로당 로고"
+          style={{ width: "200px", marginBottom: "20px" }}
+        />
         {error && <p className={styles.error_message}>{error}</p>}
         <div className={styles.form_group}>
-          <p>아이디</p>
           <Input
-            label="이메일을 적어주세요."
+            label="이메일"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className={styles.form_group}>
-          <p>비밀번호</p>
           <Input
-            label="비밀번호 4자리를 적어주세요."
+            label="비밀번호"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
