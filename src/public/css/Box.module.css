@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  place-items: center; /* 수평 및 수직 중앙 정렬 */
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  place-items: center;
+  display: grid;
+}
+.box {
+  display: flex; /* Flexbox 적용 */
+  flex-direction: column; /* 자식 요소를 세로 정렬 */
+  align-items: center; /* 자식 요소들을 가로축 가운데 정렬 */
+  gap: 20px; /* 자식 요소 간 세로 간격 */
+  background-color: rgba(251, 236, 219, 1);
+  border: 5px solid #f6aa66;
+  border-radius: 25px;
+  padding: 20px; /* 내부 여백 */
+  width: 70%;
+  box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
+}

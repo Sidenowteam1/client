@@ -1,6 +1,7 @@
 // src/pages/login.jsx
 import React, { useState } from "react";
 import styles from "../public/css/Login.module.css";
+import "../public/css/Main.css";
 import Input from "../components/Input";
 import Button from "../components/Button";
 const Login = () => {
