@@ -4,10 +4,13 @@ import styles from "../public/css/Login.module.css";
 import "../public/css/Main.css";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +23,8 @@ const Login = () => {
 
     setError("");
     console.log("로그인 시도:", { email, password });
+
+    navigate("/pages/MyPage");
   };
 
   return (

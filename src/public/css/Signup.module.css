@@ -1,45 +1,62 @@
 body {
   background-color: #fcf3e4;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.login_container {
+.signup_container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
 }
 
-.login_form {
+.signup_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fbeddc;
-  padding: 20px;
+  padding: 30px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   border: 3px solid #f57c00;
-  min-height: 400px;
 }
 
 .form_group {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.login_form img {
+.signup_form img {
   margin: 0 auto 30px;
   width: 60%;
 }
 
-.login_form input {
-  margin: 0 auto 15px;
-  width: 250px;
+.signup_form input {
+  width: 100%;
   padding: 10px;
-  height: 20px;
+  box-sizing: border-box;
+}
+
+.email_input_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.email_input {
+  flex: 1;
+}
+
+.id_check {
+  background-color: #ccc;
+  color: #666;
 }

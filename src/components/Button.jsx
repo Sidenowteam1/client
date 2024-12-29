@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "../public/css/Button.module.css";
 
-const Button = ({ label, onClick }) => {
+const Button = ({ label, onClick, className }) => {
   return (
-    <div>
-      <button className={styles.button} onClick={onClick}>
-        {label}
-      </button>
-    </div>
+    <button
+      className={`${styles.button} ${className || ""}`}
+      onClick={onClick}
+      disabled={className?.includes(styles.id_check)} // id_check일 경우 비활성화
+    >
+      {label}
+    </button>
   );
 };
 

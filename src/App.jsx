@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Promise1 />} /> {/* 기본 경로로 설정 */}
+        <Route path="/" element={<Signup />} /> {/* 기본 경로로 설정 */}
         <Route path="/pages/Introduce" element={<Introduce />} />
         <Route path="/pages/AboutUs" element={<AboutUs />} />
         <Route path="/pages/ChatBot" element={<ChatBot />} />
