@@ -9,12 +9,14 @@ import Signup from "./pages/Signup";
 import MyPage from "./pages/MyPage";
 import Promise1 from "./pages/Promise1";
 import PromiseSuccess from "./pages/PromiseSuccess";
+import ReverseRPS from "./pages/ReverseRPS";
+import ReverseRPSMain from "./pages/ReverseRPSMain";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Signup />} /> {/* 기본 경로로 설정 */}
+        <Route path="/" element={<ReverseRPSMain />} /> {/* 기본 경로로 설정 */}
         <Route path="/pages/Introduce" element={<Introduce />} />
         <Route path="/pages/AboutUs" element={<AboutUs />} />
         <Route path="/pages/ChatBot" element={<ChatBot />} />
@@ -22,6 +24,8 @@ function App() {
         <Route path="/pages/Signup" element={<Signup />} />
         <Route path="/pages/Mypage" element={<MyPage />} />
         <Route path="/pages/PromiseSuccess" element={<PromiseSuccess />} />
+        <Route path="/pages/ReverseRPS" element={<ReverseRPS />} />
+        <Route path="/pages/ReverseRPSMain" element={<ReverseRPSMain />} />
       </Routes>
     </Router>
   );
