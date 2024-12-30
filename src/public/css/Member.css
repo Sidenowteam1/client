@@ -1,0 +1,45 @@
+.box-with-info {
+  position: relative; /* 부모 요소를 기준으로 자식 위치 설정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(251, 236, 219, 1);
+  border: 5px solid #f6aa66;
+  border-radius: 25px;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
+}
+
+.meeting-info {
+  position: absolute; /* 박스 위에 걸쳐지도록 설정 */
+  top: -30px; /* 위로 20px 이동 */
+  left: 50%;
+  width: 500px;
+  height: 50px;
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  background-color: #f6aa66;
+  border-radius: 60px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 멤버 카드 간 간격 */
+  width: 70%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.member-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 60px;
+  box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
+  text-align: center;
+}

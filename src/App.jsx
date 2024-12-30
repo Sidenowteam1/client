@@ -9,19 +9,22 @@ import Signup from "./pages/Signup";
 import MyPage from "./pages/MyPage";
 import Promise1 from "./pages/Promise1";
 import PromiseSuccess from "./pages/PromiseSuccess";
+import Member from "./pages/PromiseMember";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Promise1 />} /> {/* 기본 경로로 설정 */}
+        <Route path="/" element={<Member />} /> {/* 기본 경로로 설정 */}
         <Route path="/pages/Introduce" element={<Introduce />} />
         <Route path="/pages/AboutUs" element={<AboutUs />} />
         <Route path="/pages/ChatBot" element={<ChatBot />} />
         <Route path="/pages/Login" element={<Login />} />
         <Route path="/pages/Signup" element={<Signup />} />
         <Route path="/pages/Mypage" element={<MyPage />} />
+        <Route path="/pages/Mypage" element={<Promise1 />} />
         <Route path="/pages/PromiseSuccess" element={<PromiseSuccess />} />
+        {/* <Route path="/pages/PromiseMember" element={<Member />} /> */}
       </Routes>
     </Router>
   );
