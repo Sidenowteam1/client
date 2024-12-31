@@ -16,6 +16,7 @@ import ReverseRPS from "./pages/ReverseRPS";
 import ReverseRPSMain from "./pages/ReverseRPSMain";
 import NumberGuess from "./pages/NumberGuess";
 import NumberGuessMain from "./pages/NumberGuessMain";
+import Choose from "./pages/Choose";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
               path="/pages/NumberGuessMain"
               element={<NumberGuessMain />}
             />
+            <Route path="/pages/Choose" element={<Choose />} />
           </Routes>
         </div>
       </Router>
