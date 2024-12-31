@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
-import Introduce from "./pages/Introduce";
 import AboutUs from "./pages/AboutUs";
 import ChatBot from "./pages/ChatBot";
 import Login from "./pages/Login";
@@ -21,7 +20,6 @@ function App() {
         <div className="router-content">
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/pages/Introduce" element={<Introduce />} />
             <Route path="/pages/AboutUs" element={<AboutUs />} />
             <Route path="/pages/ChatBot" element={<ChatBot />} />
             <Route path="/pages/Login" element={<Login />} />
