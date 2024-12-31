@@ -1,0 +1,100 @@
+.promise-container {
+  display: flex;
+  align-items: flex-start; /* 세로축 상단 정렬 */
+  gap: 100px;
+  width: 100%;
+}
+
+.made-promise,
+.joined-promise {
+  width: 40%; /* 각 박스 너비 설정 */
+  position: relative;
+}
+
+.notice {
+  background-color: #f6aa66;
+  border-radius: 60px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  width: 200px;
+  font-size: 20px;
+  position: absolute; /* 박스 위에 걸쳐지도록 설정 */
+  top: -40px;
+  left: 47%; /* 가로 중앙 정렬 */
+  transform: translateX(-50%); /* 중앙 정렬 보정 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.made-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 약속 아이템 간격 */
+  margin: 40px;
+}
+
+.info-text {
+  margin-left: 20px;
+}
+
+.promise-item {
+  display: flex;
+  justify-content: space-between; /* 텍스트와 버튼 좌우 배치 */
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  border-radius: 60px;
+  height: 50px;
+}
+
+.cancelled {
+  background-color: #f8caca;
+}
+.cancel-line {
+  text-decoration: line-through; /* 약속 정보 텍스트에만 취소선 */
+}
+
+.deletable {
+  background-color: white; /* 삭제 가능한 약속 배경색 */
+}
+
+.confirmed {
+  background-color: #bbea95; /* 확정된 약속 배경색 */
+}
+
+.people-count {
+  font-size: 0.9rem;
+  color: #4c4c4c;
+  margin-right: 10px;
+}
+.action-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 60px;
+  border: none;
+  background-color: #ffc089;
+  color: black;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:hover {
+  background-color: #f6aa66;
+  transition: 0.3s;
+}
+
+.deletable .action-button:hover {
+  background-color: #f6aa66;
+}
+
+.confirmed .action-button {
+  background-color: white; /* 확정 버튼 색상 */
+  color: black;
+}
+.action-button:disabled {
+  background-color: #d3d3d3; /* 비활성화 버튼 색상 */
+  cursor: default; /* 클릭 불가 시 포인터 스타일 */
+  color: #8a8a8a;
+}
