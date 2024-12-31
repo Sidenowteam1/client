@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import AboutUs from "./pages/AboutUs";
 import ChatBot from "./pages/ChatBot";
 import Login from "./pages/Login";
@@ -16,11 +17,14 @@ import ReverseRPSMain from "./pages/ReverseRPSMain";
 import NumberGuess from "./pages/NumberGuess";
 import NumberGuessMain from "./pages/NumberGuessMain";
 import Choose from "./pages/Choose";
+import Promise01 from "./pages/Promise01";
+import Promise02 from "./pages/Promise02";
 
 function App() {
   return (
     <div className="app">
       <Router>
+        <Header />
         <div className="router-content">
           <Routes>
             <Route path="/" element={<MainPage />} />
@@ -40,6 +44,8 @@ function App() {
               element={<NumberGuessMain />}
             />
             <Route path="/pages/Choose" element={<Choose />} />
+            <Route path="/pages/Promise01" element={<Promise01 />} />
+            <Route path="/pages/Promise02" element={<Promise02 />} />
           </Routes>
         </div>
       </Router>
