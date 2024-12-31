@@ -17,7 +17,7 @@ const MyPage = () => {
         <div className="profileBox">
           <div className="profileImage">
             <img
-              src="src\images\default-profile.png"
+              src="..\src\images\default-profile.png"
               alt="profile"
               className="profile-image"
             />
@@ -56,18 +56,26 @@ const MyPage = () => {
       <div className="government">
         <h2 className="title">● 나의 혜택</h2>
         <div className="governBox">
-          <div className="notice">
+          <div className="question">
             <img
-              src="src\images\govern.png"
+              src="../src/images/govern.png"
               alt="말풍선"
               className="govern-img"
             />
             <h3>내 나이에 맞는 정부 혜택은?</h3>
           </div>
-          <div className="contents">1. 지원 내용</div>
-          <div className="contents">2. 지원 내용</div>
-          <div className="add">
-            <strong>+</strong> 더보기
+          <div className="contents-list">
+            <div className="contents">
+              1. 지원 내용
+              <p>지원내용 구체적으로 작성됨</p>
+            </div>
+            <div className="contents">
+              2. 지원 내용
+              <p>텍스트 길이에 따라서 칸 길이가 조정됨</p>
+            </div>
+            <div className="add">
+              <strong>+</strong> 더보기
+            </div>
           </div>
         </div>
       </div>
