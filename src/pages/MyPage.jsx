@@ -9,6 +9,24 @@ const MyPage = () => {
   const [password, setPassword] = useState("1234");
   const [phone, setPhone] = useState("010-0000-0000");
   const [group, setGroup] = useState("신난다 경로당");
+  const [profileImage, setProfileImage] = useState(
+    "../src/images/default-profile.png"
+  ); // 기본 프로필 이미지 경로
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setProfileImage(e.target.result); // 이미지 미리보기 설정
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleImageReset = () => {
+    setProfileImage("../src/images/default-profile.png"); // 기본 프로필로 복원
+  };
 
   return (
     <div className="container">
@@ -16,14 +34,24 @@ const MyPage = () => {
         <h2 className="title">● 프로필 수정</h2>
         <div className="profileBox">
           <div className="profileImage">
-            <img
-              src="..\src\images\default-profile.png"
-              alt="profile"
-              className="profile-image"
-            />
+            <img src={profileImage} alt="profile" className="profile-image" />
             <div className="buttonGroup">
-              <button className="profile">사진 수정</button>
-              <button className="profile">사진 삭제</button>
+              <button
+                className="profile"
+                onClick={() => document.getElementById("image-upload").click()}
+              >
+                사진 수정
+              </button>
+              <input
+                id="image-upload"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleImageChange}
+              />
+              <button className="profile" onClick={handleImageReset}>
+                사진 삭제
+              </button>
             </div>
           </div>
 
