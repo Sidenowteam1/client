@@ -12,6 +12,10 @@ import PromiseSuccess from "./pages/PromiseSuccess";
 import Member from "./pages/PromiseMember";
 import MyPromsie from "./pages/MyPromise";
 import MainPage from "./pages/MainPage";
+import ReverseRPS from "./pages/ReverseRPS";
+import ReverseRPSMain from "./pages/ReverseRPSMain";
+import NumberGuess from "./pages/NumberGuess";
+import NumberGuessMain from "./pages/NumberGuessMain";
 
 function App() {
   return (
@@ -29,6 +33,13 @@ function App() {
             <Route path="/pages/PromiseSuccess" element={<PromiseSuccess />} />
             <Route path="/pages/PromiseMember" element={<Member />} />
             <Route path="/pages/MyPromise" element={<MyPromsie />} />
+            <Route path="/pages/ReverseRPS" element={<ReverseRPS />} />
+            <Route path="/pages/ReverseRPSMain" element={<ReverseRPSMain />} />
+            <Route path="/pages/NumberGuess" element={<NumberGuess />} />
+            <Route
+              path="/pages/NumberGuessMain"
+              element={<NumberGuessMain />}
+            />
           </Routes>
         </div>
       </Router>

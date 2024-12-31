@@ -1,19 +1,24 @@
-/* components/Button.module.css */
+/* Button.module.css */
 .button {
-  padding: 5px 13px;
-  background-color: #fdefdf;
-  color: #fd9e4c;
+  background-color: #fbaf6b;
+  color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
+  width: 100px;
+  height: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.button:hover {
-  color: white;
-  background-color: #fd9e4c;
-}
-
+.button:hover,
+.button:focus,
 .button:active {
-  background-color: #fdefdf;
+  color: white;
+  border: none;
+}
+
+.id_check {
+  background-color: gray !important;
 }
