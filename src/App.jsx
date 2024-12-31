@@ -7,7 +7,6 @@ import ChatBot from "./pages/ChatBot";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import MyPage from "./pages/MyPage";
-import Promise1 from "./pages/Promise1";
 import PromiseSuccess from "./pages/PromiseSuccess";
 import Member from "./pages/PromiseMember";
 import MyPromsie from "./pages/MyPromise";
@@ -30,7 +29,6 @@ function App() {
             <Route path="/pages/Login" element={<Login />} />
             <Route path="/pages/Signup" element={<Signup />} />
             <Route path="/pages/Mypage" element={<MyPage />} />
-            <Route path="/pages/Promise1" element={<Promise1 />} />
             <Route path="/pages/PromiseSuccess" element={<PromiseSuccess />} />
             <Route path="/pages/PromiseMember" element={<Member />} />
             <Route path="/pages/MyPromise" element={<MyPromsie />} />

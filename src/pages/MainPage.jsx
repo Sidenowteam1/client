@@ -10,9 +10,9 @@ const MainPage = () => {
     navigate("/pages/MyPage"); // MyPage.jsx가 해당 경로로 렌더링되도록 설정
   };
 
-  const goToPromise1 = () => {
-    navigate("/pages/Promise1"); // Promise1.jsx가 해당 경로로 렌더링되도록 설정
-  };
+  /*const goToPromise1 = () => {
+    navigate("/pages/Promise1");
+  };*/
 
   const goToChoose = () => {
     navigate("/pages/Choose"); // Choose.jsx가 해당 경로로 렌더링되도록 설정
@@ -20,7 +20,7 @@ const MainPage = () => {
 
   return (
     <div className="main-buttons">
-      <img src="src\images\promise.png" alt="약속잡기" onClick={goToPromise1} />
+      <img src="src\images\promise.png" alt="약속잡기" />
       <img src="src\images\game.png" alt="게임" onClick={goToChoose} />
       <img src="src\images\mypage.png" alt="마이페이지" onClick={goToMyPage} />
     </div>
