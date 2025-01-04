@@ -4,7 +4,7 @@ body {
   background-color: #fcf3e4;
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* 콘텐츠가 화면 전체를 덮도록 보장 */
+  min-height: 100vh;
   display: flex;
   flex-direction: column; /* 푸터를 화면 하단에 자연스럽게 배치 */
 }
@@ -18,13 +18,13 @@ body {
 }
 
 .footer {
-  background-color: #ea9851; /* 주황색 배경 */
-  height: 100px; /* 푸터 높이 */
-  width: 100%; /* 화면 가로 전체 */
-  margin-top: auto; /* 푸터를 컨텐츠 아래로 밀기 */
-  display: flex; /* Flexbox 사용 */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center; /* 가로 중앙 정렬 */
+  background-color: #ea9851;
+  height: 130px;
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {

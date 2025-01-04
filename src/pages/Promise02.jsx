@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../public/css/Promise02.css";
-import Header from "../components/Header";
 
 const Promise02 = () => {
   const navigate = useNavigate();
@@ -17,11 +16,19 @@ const Promise02 = () => {
   };
 
   const handleSubmit = () => {
+    const { date, time, location } = formData;
+
+    // 입력 데이터 검증
+    if (!date || !time || !location) {
+      alert("모든 칸을 채워주세요!");
+      return;
+    }
+
     // 데이터베이스로 전송 (추후 구현)
     console.log("Form Data:", formData);
 
-    // Promise03으로 이동
-    navigate("/Promise03");
+    // PromiseSuccess으로 이동
+    navigate("/pages/PromiseSuccess");
   };
 
   return (
@@ -30,11 +37,10 @@ const Promise02 = () => {
         <div className="form-box">
           {/* 날짜 입력 */}
           <div className="form-item">
-            <div className="label">📅 날짜 입력</div>
+            <div className="label">📅 날짜 선택</div>
             <input
-              type="text"
+              type="date"
               name="date"
-              placeholder="11월 24일 일요일"
               value={formData.date}
               onChange={handleInputChange}
               className="input-box"
@@ -43,11 +49,10 @@ const Promise02 = () => {
 
           {/* 시간 입력 */}
           <div className="form-item">
-            <div className="label">🕒 시간 입력</div>
+            <div className="label">🕒 시간 선택</div>
             <input
-              type="text"
+              type="time"
               name="time"
-              placeholder="오후 04:00"
               value={formData.time}
               onChange={handleInputChange}
               className="input-box"
@@ -69,14 +74,10 @@ const Promise02 = () => {
         </div>
 
         {/* 약속 만들기 버튼 */}
-        <button
-          className="submit-btn"
-          onClick={() => navigate("/pages/PromiseSuccess")}
-        >
+        <button className="submit-btn" onClick={handleSubmit}>
           + 약속 만들기
         </button>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

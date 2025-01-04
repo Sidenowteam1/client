@@ -1,18 +1,8 @@
-body {
-  background-color: #fcf3e4;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
 .signup_container {
   display: flex;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
   height: 100vh;
-  text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .signup_form {
@@ -24,7 +14,7 @@ body {
   padding: 30px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 500px;
   max-width: 400px;
   border: 3px solid #f57c00;
 }
@@ -62,4 +52,8 @@ body {
 .id_check {
   background-color: #ccc;
   color: #666;
+}
+
+.signup_button:hover {
+  background-color: #f6aa66;
 }

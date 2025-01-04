@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
-// import Footer from "../components/Footer";
-import Promise02 from "./Promise02";
 import "../public/css/Promise01.css";
 
 const Promise01 = () => {
@@ -37,13 +34,33 @@ const Promise01 = () => {
     },
   ];
 
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredPromises, setFilteredPromises] = useState(promises);
+
+  // 검색 실행
+  const handleSearch = () => {
+    const searchText = searchInput.toLowerCase();
+    const results = promises.filter((promise) => {
+      return (
+        promise.date.toLowerCase().includes(searchText) ||
+        promise.location.toLowerCase().includes(searchText)
+      );
+    });
+    setFilteredPromises(results);
+  };
+
+  // "신청" 버튼 클릭 시 alert 표시
+  const handleApply = () => {
+    alert("신청 완료!"); // "신청 완료!" 메시지 표시
+  };
+
   return (
     <div>
       <div className="rectangle-box">
         <div className="promise-container">
           <div className="promise-content">
             <div className="promise-list">
-              {promises.map((promise) => (
+              {filteredPromises.map((promise) => (
                 <div className="promise-card" key={promise.id}>
                   <div className="d-day">{promise.dDay}</div>
                   <div className="left-section">
@@ -60,6 +77,11 @@ const Promise01 = () => {
                         ? "closed"
                         : "apply"
                     }`}
+                    onClick={
+                      promise.totalPeople !== promise.currentPeople
+                        ? handleApply // "신청" 버튼 클릭 시 동작
+                        : undefined // "마감" 버튼은 클릭 비활성화
+                    }
                   >
                     {promise.totalPeople === promise.currentPeople
                       ? "마감"
@@ -67,6 +89,7 @@ const Promise01 = () => {
                   </button>
                 </div>
               ))}
+              {filteredPromises.length === 0 && <p>검색 결과가 없습니다.</p>}
             </div>
           </div>
         </div>
@@ -75,10 +98,14 @@ const Promise01 = () => {
       <div className="search-and-create">
         <input
           type="text"
-          placeholder="원하는 시간, 장소를 검색하세요."
+          placeholder="원하는 시간이나 장소를 입력해주세요"
           className="search-input"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button className="search-btn">검색</button>
+        <button className="search-btn" onClick={handleSearch}>
+          검색
+        </button>
         <button
           className="create-btn"
           onClick={() => navigate("/pages/Promise02")}
@@ -86,7 +113,6 @@ const Promise01 = () => {
           + 약속 만들기
         </button>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

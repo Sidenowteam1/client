@@ -1,4 +1,4 @@
-.box-with-info {
+.boxWithInfo {
   position: relative; /* 부모 요소를 기준으로 자식 위치 설정 */
   display: flex;
   flex-direction: column;
@@ -12,7 +12,8 @@
   box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
 }
 
-.meeting-info {
+.meetingInfo {
+  font-size: 16px;
   position: absolute; /* 박스 위에 걸쳐지도록 설정 */
   top: -30px; /* 위로 20px 이동 */
   left: 50%;
@@ -27,7 +28,7 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.member-list {
+.memberList {
   display: flex;
   flex-direction: column;
   gap: 15px; /* 멤버 카드 간 간격 */
@@ -36,7 +37,7 @@
   margin-bottom: 20px;
 }
 
-.member-card {
+.memberCard {
   background-color: white;
   padding: 15px;
   border-radius: 60px;

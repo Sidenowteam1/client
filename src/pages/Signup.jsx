@@ -46,7 +46,7 @@ const Signup = () => {
     <div className={styles.signup_container}>
       <form onSubmit={handleSubmit} className={styles.signup_form}>
         <img
-          src="/src/public/images/스마트경로당로고.png"
+          src="../src/images/mainlogo.png"
           alt="스마트경로당 로고"
           className={styles.logo}
         />

@@ -24,14 +24,14 @@ const Login = () => {
     setError("");
     console.log("로그인 시도:", { email, password });
 
-    navigate("/pages/MyPage");
+    navigate("/pages/MainPage");
   };
 
   return (
     <div className={styles.login_container}>
       <form onSubmit={handleSubmit} className={styles.login_form}>
         <img
-          src="/src/public/images/스마트경로당로고.png"
+          src="../src/images/mainlogo.png"
           alt="스마트경로당 로고"
           style={{ width: "200px", marginBottom: "20px" }}
         />

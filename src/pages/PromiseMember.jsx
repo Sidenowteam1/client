@@ -1,7 +1,7 @@
 import React from "react";
 import "../public/css/Main.css";
 import styles from "../public/css/Box.module.css";
-import "../public/css/Member.css";
+import memberStyles from "../public/css/Member.module.css";
 
 const Member = () => {
   const meetingInfo = {
@@ -17,15 +17,15 @@ const Member = () => {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.box} box-with-info`}>
-        <div className="meeting-info">
+      <div className={`${styles.box} ${memberStyles.boxWithInfo}`}>
+        <div className={memberStyles.meetingInfo}>
           <p>
             📅 {meetingInfo.date} | {meetingInfo.location} 약속 멤버입니다.
           </p>
         </div>
-        <div className="member-list">
+        <div className={memberStyles.memberList}>
           {members.map((member) => (
-            <div className="member-card" key={member.id}>
+            <div className={memberStyles.memberCard} key={member.id}>
               <p>
                 {member.name} 님 전화번호 | {member.phone}
               </p>

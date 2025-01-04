@@ -16,11 +16,11 @@ const Choose = () => {
   return (
     <div className={styles.container}>
       <h1>게임을 선택해주세요!</h1>
-      <div className="game-choose-button">
-        <button className="numebr-guess" onClick={goToNumber}>
+      <div className={styles.gameChooseButton}>
+        <button className={styles.numberGuess} onClick={goToNumber}>
           숫자
         </button>
-        <button className="rps" onClick={goToReverseRPSMain}>
+        <button className={styles.rps} onClick={goToReverseRPSMain}>
           가위바위보
         </button>
       </div>
