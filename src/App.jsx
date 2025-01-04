@@ -27,7 +27,7 @@ function App() {
         <Header />
         <div className="router-content">
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<Signup />} />
             <Route path="/pages/AboutUs" element={<AboutUs />} />
             <Route path="/pages/ChatBot" element={<ChatBot />} />
             <Route path="/pages/Login" element={<Login />} />

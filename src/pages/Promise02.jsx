@@ -26,7 +26,6 @@ const Promise02 = () => {
 
   return (
     <div>
-      <Header />
       <div className="promise02-container">
         <div className="form-box">
           {/* 날짜 입력 */}

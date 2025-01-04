@@ -39,7 +39,6 @@ const Promise01 = () => {
 
   return (
     <div>
-      <Header />
       <div className="rectangle-box">
         <div className="promise-container">
           <div className="promise-content">

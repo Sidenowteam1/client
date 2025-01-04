@@ -6,6 +6,13 @@ body {
 
 .signup_container {
   display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 .signup_form {
