@@ -4,7 +4,9 @@
   align-items: center;
   background-color: #f7cfa0;
   padding: 20px;
-  margin-bottom: 10%;
+  margin-bottom: -5%;
+  position: relative;
+  z-index: 1;
 }
 
 .nav {

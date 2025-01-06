@@ -1,13 +1,14 @@
 .promise-container {
   display: flex;
   align-items: flex-start; /* 세로축 상단 정렬 */
-  gap: 100px;
+  gap: 50px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .made-promise,
 .joined-promise {
-  width: 40%; /* 각 박스 너비 설정 */
+  width: 20%; /* 각 박스 너비 설정 */
   position: relative;
 }
 

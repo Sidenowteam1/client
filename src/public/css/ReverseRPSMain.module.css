@@ -6,6 +6,7 @@
   height: 100vh;
   text-align: center;
   font-family: Arial, sans-serif;
+  margin-top: -1%;
 }
 .container button {
   padding: 15px 30px;
@@ -52,4 +53,11 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.move {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }

@@ -1,33 +1,35 @@
 .edit-profile,
 .government {
   text-align: center;
-  padding: 20px;
+  padding: 10px 0 !important; /* 상하 여백 줄이기 */
   min-height: 100vh;
   place-items: center;
   display: grid;
 }
 
 .title {
-  /* h2 프로필 수정 */
+  margin-bottom: 0 !important; /* 타이틀 아래 여백 제거 */
   color: black;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
-  margin-right: 50%;
+  margin-right: 25%;
   background: linear-gradient(to top, #ff8b28 40%, transparent 40%);
 }
 
 .profileBox,
 .governBox {
+  margin-top: -10%; /* 타이틀과 박스 사이 간격 줄이기 */
   background-color: rgba(251, 236, 219, 1);
   border: 5px solid #f6aa66;
   border-radius: 25px;
   padding: 5px;
   text-align: left;
-  width: 70%;
+  width: 30%;
   display: flex;
   align-items: center;
 }
+
 .profileImage {
   margin-left: 100px;
 }
@@ -139,7 +141,7 @@ button.profile {
   text-align: center;
   padding: 10px;
   height: 60px;
-  margin-bottom: 20px; /* 요소 간 세로 간격 추가 */
+  margin-bottom: 13%;
   border-radius: 20px;
 }
 .add:hover {

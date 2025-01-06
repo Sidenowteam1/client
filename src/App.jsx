@@ -30,7 +30,12 @@ const Layout = ({ children }) => {
   const location = useLocation();
 
   // 헤더와 푸터를 제외할 경로 설정
-  const excludeHeaderFooter = ["/", "/pages/Login", "/pages/MainPage"];
+  const excludeHeaderFooter = [
+    "/",
+    "/pages/Login",
+    "/pages/Signup",
+    "/pages/MainPage",
+  ];
 
   return (
     <>
@@ -47,7 +52,8 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<Signup />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="/pages/Signup" element={<Signup />} />
             <Route path="/pages/AboutUs" element={<AboutUs />} />
             <Route path="/pages/Login" element={<Login />} />
             <Route path="/pages/Mypage" element={<MyPage />} />
