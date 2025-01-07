@@ -1,14 +1,13 @@
 .promise-container {
   display: flex;
   align-items: flex-start; /* 세로축 상단 정렬 */
-  gap: 50px;
+  gap: 100px;
   width: 100%;
-  margin-top: 20px;
 }
 
 .made-promise,
 .joined-promise {
-  width: 20%; /* 각 박스 너비 설정 */
+  width: 30%; /* 각 박스 너비 설정 */
   position: relative;
 }
 
@@ -21,7 +20,7 @@
   width: 200px;
   font-size: 20px;
   position: absolute; /* 박스 위에 걸쳐지도록 설정 */
-  top: -40px;
+  top: -30px;
   left: 47%; /* 가로 중앙 정렬 */
   transform: translateX(-50%); /* 중앙 정렬 보정 */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -30,7 +29,7 @@
 .made-list {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* 약속 아이템 간격 */
+  gap: 20px;
   margin: 40px;
 }
 
@@ -50,7 +49,7 @@
 }
 
 .cancelled {
-  background-color: #f8caca;
+  background-color: #ffa8a8;
 }
 .cancel-line {
   text-decoration: line-through; /* 약속 정보 텍스트에만 취소선 */
@@ -73,10 +72,10 @@
   height: 40px;
   width: 100px;
   border-radius: 60px;
+  font-weight: bold;
   border: none;
   background-color: #ffc089;
   color: black;
-  color: white;
   cursor: pointer;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }

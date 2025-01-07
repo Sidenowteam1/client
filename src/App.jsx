@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   const excludeHeaderFooter = [
     "/",
     "/pages/Login",
-    "/pages/Signup",
+    "/pages/SignUp",
     "/pages/MainPage",
   ];
 
