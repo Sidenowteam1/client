@@ -90,7 +90,7 @@ const MyPage = () => {
               alt="말풍선"
               className="govern-img"
             />
-            <h3>내 나이에 맞는 정부 혜택은?</h3>
+            <h3>나에게 맞는 정부 혜택은?</h3>
           </div>
           <div className="contents-list">
             <div className="contents">

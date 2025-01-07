@@ -21,7 +21,7 @@
   font-size: 20px;
   position: absolute; /* 박스 위에 걸쳐지도록 설정 */
   top: -30px;
-  left: 47%; /* 가로 중앙 정렬 */
+  left: 50%; /* 가로 중앙 정렬 */
   transform: translateX(-50%); /* 중앙 정렬 보정 */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -68,6 +68,7 @@
   color: #4c4c4c;
   margin-right: 10px;
 }
+
 .action-button {
   height: 40px;
   width: 100px;
@@ -93,6 +94,7 @@
   background-color: white; /* 확정 버튼 색상 */
   color: black;
 }
+
 .action-button:disabled {
   background-color: #d3d3d3; /* 비활성화 버튼 색상 */
   cursor: default; /* 클릭 불가 시 포인터 스타일 */
