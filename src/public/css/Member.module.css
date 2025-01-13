@@ -8,7 +8,7 @@
   border: 5px solid #f6aa66;
   border-radius: 25px;
   padding: 20px;
-  width: 30%;
+  width: 50%;
   box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
 }
 
@@ -32,14 +32,14 @@
   display: flex;
   flex-direction: column;
   gap: 15px; /* 멤버 카드 간 간격 */
-  width: 70%;
+  width: 60%;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 .memberCard {
   background-color: white;
-  padding: 15px;
+  padding: 5px;
   border-radius: 60px;
   box-shadow: 0px 5px 5px -2px rgba(128, 128, 128, 0.719);
   text-align: center;

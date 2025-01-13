@@ -1,38 +1,47 @@
 .edit-profile,
 .government {
   text-align: center;
-  padding: 10px 0 !important; /* 상하 여백 줄이기 */
+  padding: 20px;
   min-height: 100vh;
   place-items: center;
   display: grid;
 }
 
 .title {
-  margin-bottom: 0 !important; /* 타이틀 아래 여백 제거 */
   color: black;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
-  margin-right: 25%;
+  margin-right: 38%;
   background: linear-gradient(to top, #ff8b28 40%, transparent 40%);
+  margin-bottom: -10%;
 }
 
-.profileBox,
-.governBox {
-  margin-top: -10%; /* 타이틀과 박스 사이 간격 줄이기 */
+.profileBox {
   background-color: rgba(251, 236, 219, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 5px solid #f6aa66;
   border-radius: 25px;
   padding: 5px;
   text-align: left;
-  width: 30%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.governBox {
+  background-color: rgba(251, 236, 219, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 5px solid #f6aa66;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: left;
+  width: 50%;
   display: flex;
   align-items: center;
 }
 
-.profileImage {
-  margin-left: 100px;
-}
 .profile-image {
   width: 100px;
   height: 100px;
@@ -41,25 +50,45 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 27%;
+  margin-left: 20%;
+  margin-bottom: 20px;
 }
+
 button.profile {
   margin-top: 20px;
   height: 50px;
-  margin-right: 20px;
   width: 100px;
 }
 
 .buttonGroup {
-  flex-direction: column;
+  display: flex;
+  flex-direction: column; /* 전체 버튼을 세로로 배치 */
+  align-items: center;
 }
+
+.edit-buttons {
+  display: flex;
+  flex-direction: row; /* 사진 수정, 사진 삭제 버튼은 가로로 배치 */
+  gap: 8px;
+}
+
 .buttonGroup button {
-  box-shadow: 0px 5px 5px -2px gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 80px;
+  height: 35px;
+  font-size: 13px;
 }
+
 .buttonGroup button:hover {
   background-color: #676767;
   transition: ease-out 0.3s;
 }
+
+.save-button {
+  width: 200px;
+}
+
 .profile input[type="file"] {
   display: none; /* 파일 선택 버튼 숨김 */
 }
@@ -85,7 +114,7 @@ button.profile {
   border-radius: 20px;
   height: 40px;
   width: 320px;
-  box-shadow: 0px 5px 5px -2px gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .text {
   white-space: nowrap; /* 텍스트를 한 줄로 표시 */
@@ -108,7 +137,7 @@ button.profile {
   font-size: 12px;
   font-weight: bold;
   color: black;
-  box-shadow: 0px 5px 5px -2px gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .info .changeButton:hover {
   background-color: #676767;
@@ -141,8 +170,9 @@ button.profile {
   text-align: center;
   padding: 10px;
   height: 60px;
-  margin-bottom: 13%;
+  margin-bottom: 20px; /* 요소 간 세로 간격 추가 */
   border-radius: 20px;
+  font-size: 15px;
 }
 .add:hover {
   cursor: pointer;

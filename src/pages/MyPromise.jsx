@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "../public/css/Main.css";
 import styles from "../public/css/Box.module.css";
 import "../public/css/MyPromise.css";
 
 const MyPromise = () => {
-  const made = [
-    { id: 1, info: "○○ 경로당 18시", current: 1, total: 5, check: 0 }, // check=0: 취소된 약속
-    { id: 2, info: "□□ 경로당 13시", current: 3, total: 3, check: 2 }, // check=2: 확정된 약속
-    { id: 3, info: "▲▲ 경로당 10시", current: 2, total: 3, check: 1 }, // check=1: 삭제 가능한 약속
-  ];
+  // State로 made와 joined 리스트 관리
+  const [made, setMade] = useState([
+    { id: 1, info: "○○ 경로당 18시", current: 1, total: 5, check: 0 },
+    { id: 2, info: "□□ 경로당 13시", current: 3, total: 3, check: 2 },
+    { id: 3, info: "▲▲ 경로당 10시", current: 2, total: 3, check: 1 },
+  ]);
 
-  const joined = [
-    { id: 1, info: "○○ 경로당 18시", current: 1, total: 4, check: 0 }, // check=0: 파투된 약속
-    { id: 2, info: "□□ 경로당 13시", current: 3, total: 3, check: 2 }, // check=2: 확정된 약속
-    { id: 3, info: "▲▲ 경로당 10시", current: 2, total: 3, check: 1 }, // check=1: 취소 가능한 약속
-  ];
+  const [joined, setJoined] = useState([
+    { id: 1, info: "○○ 경로당 18시", current: 1, total: 4, check: 0 },
+    { id: 2, info: "□□ 경로당 13시", current: 3, total: 3, check: 2 },
+    { id: 3, info: "▲▲ 경로당 10시", current: 2, total: 3, check: 1 },
+  ]);
+
+  // made 리스트 항목 삭제
+  const handleDeleteMade = (id) => {
+    setMade(made.filter((item) => item.id !== id));
+  };
+
+  // joined 리스트 항목 삭제
+  const handleDeleteJoined = (id) => {
+    setJoined(joined.filter((item) => item.id !== id));
+  };
 
   return (
     <div className={`${styles.container} promise-container`}>
@@ -43,13 +54,19 @@ const MyPromise = () => {
               <span className="people-count">
                 {content.current} / {content.total}
               </span>
-              <button className="action-button">
-                {content.check === 0
-                  ? "확인"
-                  : content.check === 2
-                  ? "확정"
-                  : "삭제"}
-              </button>
+              {(content.check === 0 || content.check === 1) && (
+                <button
+                  className="action-button"
+                  onClick={() => handleDeleteMade(content.id)}
+                >
+                  {content.check === 0 ? "확인" : "삭제"}
+                </button>
+              )}
+              {content.check === 2 && (
+                <button className="action-button" disabled>
+                  확정
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -80,13 +97,19 @@ const MyPromise = () => {
               <span className="people-count">
                 {content.current} / {content.total}
               </span>
-              <button className="action-button" disabled={content.check === 0}>
-                {content.check === 0
-                  ? "파투"
-                  : content.check === 2
-                  ? "확정"
-                  : "취소"}
-              </button>
+              {content.check === 1 && (
+                <button
+                  className="action-button"
+                  onClick={() => handleDeleteJoined(content.id)}
+                >
+                  삭제
+                </button>
+              )}
+              {(content.check === 0 || content.check === 2) && (
+                <button className="action-button" disabled>
+                  {content.check === 0 ? "파투" : "확정"}
+                </button>
+              )}
             </div>
           ))}
         </div>

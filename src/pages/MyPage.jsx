@@ -28,6 +28,35 @@ const MyPage = () => {
     setProfileImage("../src/images/default-profile.png"); // 기본 프로필로 복원
   };
 
+  // 서버로 데이터 전송하는 함수
+  const handleSave = async () => {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("birthdate", birthdate);
+    formData.append("userId", userId);
+    formData.append("phone", phone);
+    formData.append("group", group);
+    formData.append("profileImage", profileImage); // 이미지 파일 전송
+
+    try {
+      const response = await fetch("/api/submitData", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("Data submitted successfully!");
+        // 전송 성공 시 처리 (예: 사용자에게 알림)
+      } else {
+        console.error("Error submitting data");
+        // 전송 실패 시 처리
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      // 네트워크 에러 시 처리
+    }
+  };
+
   return (
     <div className="container">
       <div className="edit-profile">
@@ -36,21 +65,31 @@ const MyPage = () => {
           <div className="profileImage">
             <img src={profileImage} alt="profile" className="profile-image" />
             <div className="buttonGroup">
+              <div className="edit-buttons">
+                <button
+                  className="profile"
+                  onClick={() =>
+                    document.getElementById("image-upload").click()
+                  }
+                >
+                  사진 수정
+                </button>
+                <input
+                  id="image-upload"
+                  type="file"
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  onChange={handleImageChange}
+                />
+                <button className="profile" onClick={handleImageReset}>
+                  사진 삭제
+                </button>
+              </div>
               <button
-                className="profile"
-                onClick={() => document.getElementById("image-upload").click()}
+                className="profile save-button"
+                onClick={handleSave} // 저장 버튼 클릭 시 서버로 데이터 전송
               >
-                사진 수정
-              </button>
-              <input
-                id="image-upload"
-                type="file"
-                accept="image/*"
-                style={{ display: "none" }}
-                onChange={handleImageChange}
-              />
-              <button className="profile" onClick={handleImageReset}>
-                사진 삭제
+                저장
               </button>
             </div>
           </div>
@@ -90,7 +129,7 @@ const MyPage = () => {
               alt="말풍선"
               className="govern-img"
             />
-            <h3>내 나이에 맞는 정부 혜택은?</h3>
+            <h3>나에게 맞는 정부 혜택은?</h3>
           </div>
           <div className="contents-list">
             <div className="contents">

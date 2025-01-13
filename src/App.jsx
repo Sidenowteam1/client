@@ -8,6 +8,7 @@ import {
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HeaderMember from "./components/HeaderMember";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -33,7 +34,7 @@ const Layout = ({ children }) => {
   const excludeHeaderFooter = [
     "/",
     "/pages/Login",
-    "/pages/Signup",
+    "/pages/SignUp",
     "/pages/MainPage",
   ];
 
@@ -73,6 +74,10 @@ function App() {
             <Route path="/pages/Promise02" element={<Promise02 />} />
             <Route path="/pages/Introduce" element={<Introduce />} />
             <Route path="/pages/ChatbotPage" element={<ChatbotPage />} />
+            <Route
+              path="../components/HeaderMember"
+              element={<HeaderMember />}
+            />
           </Routes>
         </Layout>
       </Router>
