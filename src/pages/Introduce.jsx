@@ -26,6 +26,11 @@ const Introduce = () => {
         alt="introduce04"
         className="introduce-image"
       />
+      <img
+        src="../src/images/introduce05.png"
+        alt="introduce04"
+        className="introduce-image"
+      />
     </div>
   );
 };
