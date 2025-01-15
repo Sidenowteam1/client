@@ -86,6 +86,11 @@ const Signup = () => {
     }
   };
 
+  // 로그인 페이지로 이동하는 함수
+  const handleLoginpClick = () => {
+    navigate("/pages/Login");
+  };
+
   return (
     <div className={styles.signup_container}>
       <form onSubmit={handleSubmit} className={styles.signup_form}>
@@ -153,7 +158,18 @@ const Signup = () => {
           />
         </div>
 
-        <Button label="회원가입" onClick={handleSubmit} />
+        <p
+          onClick={handleLoginpClick}
+          style={{
+            cursor: "pointer",
+            color: "#ff8c42",
+            textDecoration: "underline",
+          }}
+        >
+          회원이신가요? 눌러서 로그인 창으로 이동!!
+        </p>
+
+        <Button label="회원가입" type="submit" />
       </form>
     </div>
   );

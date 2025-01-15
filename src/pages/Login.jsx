@@ -56,6 +56,10 @@ const Login = () => {
     }
   };
 
+  const handleSignupClick = () => {
+    navigate("/pages/Signup");
+  };
+
   return (
     <div className={styles.login_container}>
       <form onSubmit={handleSubmit} className={styles.login_form}>
@@ -80,6 +84,16 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <p
+            onClick={handleSignupClick}
+            style={{
+              cursor: "pointer",
+              color: "#ff8c42",
+              textDecoration: "underline",
+            }}
+          >
+            회원이 아니신가요? 눌러서 회원가입창으로 이동!!
+          </p>
           <Button label="로그인" onClick={handleSubmit} />
         </div>
       </form>
