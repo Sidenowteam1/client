@@ -53,7 +53,7 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<Login />} />
             <Route path="/pages/Signup" element={<Signup />} />
             <Route path="/pages/AboutUs" element={<AboutUs />} />
             <Route path="/pages/Login" element={<Login />} />

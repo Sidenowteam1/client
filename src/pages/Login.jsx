@@ -42,6 +42,10 @@ const Login = () => {
 
       console.log("로그인 성공:", response.data);
 
+      // 로그인 성공 시 토큰을 로컬스토리지에 저장
+      const token = response.data.token; // 토큰이 반환된다고 가정
+      localStorage.setItem("authToken", token); // 로컬스토리지에 토큰 저장
+
       // 로그인 성공 시 페이지 이동
       navigate("/pages/MainPage");
     } catch (err) {

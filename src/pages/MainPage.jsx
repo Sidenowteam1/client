@@ -24,7 +24,7 @@ const Header = () => {
           <div className="welcome">
             '<b>육하원칙</b>'님 환영합니다
           </div>
-          <a href="/pages/MainPage" className="link">
+          <a href="/pages/SignUp" className="link">
             로그아웃
           </a>
         </div>
