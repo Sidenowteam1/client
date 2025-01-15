@@ -23,7 +23,7 @@ const Header = () => {
           <Link to="../pages/MyPromise" className={styles.link}>
             나의 약속
           </Link>
-          <div class="welcome">
+          <div className="welcome">
             '<b>육하원칙</b>'님 환영합니다
           </div>
           <Link to="../pages/MainPage" className={styles.link}>

@@ -26,12 +26,7 @@ const Login = () => {
     e.preventDefault();
 
     // 간단한 유효성 검사
-<<<<<<< HEAD
     if (!username || !password) {
-      // email -> username
-=======
-    if (!username || !password) { // email -> username
->>>>>>> f88ddade6fdcb54ded8e998af875e0f488fb8c99
       alert("아이디와 비밀번호를 입력해주세요.");
       return;
     }
@@ -59,13 +54,10 @@ const Login = () => {
         setError("로그인에 실패했습니다. 다시 시도해주세요.");
       }
     }
-<<<<<<< HEAD
-=======
   };
 
   const handleSignupClick = () => {
     navigate("/pages/Signup");
->>>>>>> f88ddade6fdcb54ded8e998af875e0f488fb8c99
   };
 
   return (
@@ -102,7 +94,7 @@ const Login = () => {
           >
             회원이 아니신가요? 눌러서 회원가입창으로 이동!!
           </p>
-          <Button label="로그인" onClick={handleSubmit} />
+          <Button label="로그인" />
         </div>
       </form>
     </div>

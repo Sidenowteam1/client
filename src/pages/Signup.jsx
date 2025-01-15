@@ -57,13 +57,9 @@ const Signup = () => {
       navigate("/pages/Login"); // 회원가입 성공 시 로그인 페이지로 이동
     } catch (error) {
       console.error("회원가입 실패:", error.response?.data || error.message);
-<<<<<<< HEAD
       alert(
         error.response?.data?.message || "회원가입 중 오류가 발생했습니다."
       );
-=======
-      alert(error.response?.data?.message || "회원가입 중 오류가 발생했습니다.");
->>>>>>> f88ddade6fdcb54ded8e998af875e0f488fb8c99
     }
   };
 
@@ -88,20 +84,15 @@ const Signup = () => {
       }
     } catch (error) {
       console.error("중복 확인 실패:", error.response?.data || error.message);
-<<<<<<< HEAD
       alert(
         error.response?.data?.message || "중복 확인 중 오류가 발생했습니다."
       );
-    }
-=======
-      alert(error.response?.data?.message || "중복 확인 중 오류가 발생했습니다.");
     }
   };
 
   // 로그인 페이지로 이동하는 함수
   const handleLoginpClick = () => {
     navigate("/pages/Login");
->>>>>>> f88ddade6fdcb54ded8e998af875e0f488fb8c99
   };
 
   return (
@@ -159,18 +150,6 @@ const Signup = () => {
             type="password"
             value={password2}
             onChange={(e) => setPassword2(e.target.value)}
-<<<<<<< HEAD
-          />
-        </div>
-
-        <div className={styles.form_group}>
-          <Input
-            label="전화번호"
-            type="text"
-            value={phonenum}
-            onChange={(e) => setPhonenum(e.target.value)}
-=======
->>>>>>> f88ddade6fdcb54ded8e998af875e0f488fb8c99
           />
         </div>
 
@@ -201,5 +180,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-

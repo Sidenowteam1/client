@@ -21,7 +21,7 @@ const Header = () => {
           <a href="/pages/MyPromise" className="link">
             나의 약속
           </a>
-          <div class="welcome">
+          <div className="welcome">
             '<b>육하원칙</b>'님 환영합니다
           </div>
           <a href="/pages/SignUp" className="link">
