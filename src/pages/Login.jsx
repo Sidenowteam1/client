@@ -25,7 +25,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 간단한 유효성 검사
     if (!username || !password) {
       alert("아이디와 비밀번호를 입력해주세요.");
       return;
@@ -34,26 +33,24 @@ const Login = () => {
     setError(""); // 에러 초기화
 
     try {
-      // 백엔드로 로그인 요청
+      // 로그인 요청
       const response = await axiosInstance.post("/api/user/login", {
-        username, // email -> username
+        username,
         password,
       });
 
-      console.log("로그인 성공:", response.data);
+      // 서버 응답 출력
+      console.log("서버 응답:", response.data); // 서버에서 반환한 토큰 정보 출력
 
-      // 로그인 성공 시 토큰을 로컬스토리지에 저장
-      const token = response.data.token; // 토큰이 반환된다고 가정
-      localStorage.setItem("authToken", token); // 로컬스토리지에 토큰 저장
+      const token = response.data.data.accessToken; // 서버 응답에서 토큰 추출
+      localStorage.setItem("authToken", token); // 토큰을 로컬스토리지에 저장
 
-      // 로그인 성공 시 페이지 이동
-      navigate("/pages/MainPage");
+      navigate("/pages/MainPage"); // 페이지 이동
     } catch (err) {
       console.error("로그인 실패:", err);
 
-      // 에러 메시지 처리
       if (err.response && err.response.data && err.response.data.message) {
-        setError(err.response.data.message); // 백엔드에서 제공하는 에러 메시지
+        setError(err.response.data.message);
       } else {
         setError("로그인에 실패했습니다. 다시 시도해주세요.");
       }
