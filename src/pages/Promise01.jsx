@@ -73,13 +73,19 @@ const Promise01 = () => {
                   </div>
                   <button
                     className={`promise-btn ${
-                      promise.totalPeople === promise.currentPeople ? "closed" : "apply"
+                      promise.totalPeople === promise.currentPeople
+                        ? "closed"
+                        : "apply"
                     }`}
                     onClick={
-                      promise.totalPeople !== promise.currentPeople ? handleApply : undefined // "신청" 버튼 클릭 시 동작
+                      promise.totalPeople !== promise.currentPeople
+                        ? handleApply
+                        : undefined // "신청" 버튼 클릭 시 동작
                     }
                   >
-                    {promise.totalPeople === promise.currentPeople ? "마감" : "신청"}
+                    {promise.totalPeople === promise.currentPeople
+                      ? "마감"
+                      : "신청"}
                   </button>
                 </div>
               ))}
@@ -112,4 +118,3 @@ const Promise01 = () => {
 };
 
 export default Promise01;
-
