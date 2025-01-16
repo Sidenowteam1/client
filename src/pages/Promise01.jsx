@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import Header from "../components/Header";
 import "../public/css/Promise01.css";
 
 const Promise01 = () => {
