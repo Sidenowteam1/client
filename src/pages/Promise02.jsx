@@ -5,9 +5,12 @@ import "../public/css/Promise02.css";
 const Promise02 = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    title: "",
+    description: "",
     date: "",
     time: "",
     location: "",
+    maximum: 3, // 기본값 3명
   });
 
   const handleInputChange = (e) => {
@@ -35,6 +38,32 @@ const Promise02 = () => {
     <div>
       <div className="promise02-container">
         <div className="form-box">
+          {/* 약속 제목 입력 */}
+          <div className="form-item">
+            <div className="label">📝 약속 제목</div>
+            <input
+              type="text"
+              name="title"
+              placeholder="망원 시장"
+              value={formData.title}
+              onChange={handleInputChange}
+              className="input-box"
+            />
+          </div>
+
+          {/* 약속 설명 입력 */}
+          <div className="form-item">
+            <div className="label">📝 약속 설명</div>
+            <input
+              type="text"
+              name="description"
+              placeholder="망원 시장에서 같이 호떡 먹어요~!"
+              value={formData.description}
+              onChange={handleInputChange}
+              className="input-box"
+            />
+          </div>
+
           {/* 날짜 입력 */}
           <div className="form-item">
             <div className="label">📅 날짜 선택</div>
@@ -65,24 +94,28 @@ const Promise02 = () => {
             <input
               type="text"
               name="location"
-              placeholder="가락시장역"
+              placeholder="망원역 1번 출구"
               value={formData.location}
               onChange={handleInputChange}
               className="input-box"
             />
           </div>
 
-          {/*인원 설정 입력 */}
+          {/* 최대 참여 인원 선택 */}
           <div className="form-item">
-            <div className="label">👥 인원 수 입력</div>
-            <input
-              type="text"
+            <div className="label">👥 최대 참여 인원</div>
+            <select
               name="maximum"
-              placeholder="5"
-              value={formData.max}
+              value={formData.maximum}
               onChange={handleInputChange}
-              className="input-box"
-            />
+              className="selectbox"
+            >
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 3}>
+                  {i + 3}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 

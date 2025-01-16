@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   background-color: #fdf2e9;
-  margin-top: 80px;
+  margin-top: 10%;
   margin-bottom: 50px;
   padding: 20px;
 }
@@ -21,6 +21,7 @@
   padding: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   gap: 15px;
+  height: auto;
 }
 
 .form-item {
@@ -33,7 +34,18 @@
   background-color: #f5a971;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+select {
+  height: 50px; /* 기존 input-box와 동일한 높이 */
+  width: 400px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 .label {
   font-size: 16px;
   font-weight: bold;
