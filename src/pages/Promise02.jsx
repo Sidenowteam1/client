@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../public/css/Promise02.css";
+import axios from "axios";
 
 const Promise02 = () => {
   const navigate = useNavigate();
@@ -11,6 +12,8 @@ const Promise02 = () => {
     time: "",
     location: "",
     maximum: 3, // 기본값 3명
+    createdBy: "", // 예시로 넣은 생성자 이름
+    phoneNumber: "", // 예시로 넣은 생성자 연락처
   });
 
   const handleInputChange = (e) => {
@@ -18,20 +21,66 @@ const Promise02 = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    const { date, time, location } = formData;
+  const handleSubmit = async () => {
+    const {
+      date,
+      time,
+      location,
+      title,
+      description,
+      maximum,
+      createdBy,
+      phoneNumber,
+    } = formData;
 
     // 입력 데이터 검증
-    if (!date || !time || !location) {
+    if (!date || !time || !location || !title || !description) {
       alert("모든 칸을 채워주세요!");
       return;
+    }
+
+    const startTime = `${date}T${time}:00`; // startTime은 날짜와 시간이 합쳐진 ISO 8601 형식이어야 함
+    const endTime = `${date}T${parseInt(time.split(":")[0]) + 1}:${
+      time.split(":")[1]
+    }:00`; // 1시간 후로 설정
+
+    // API 호출
+    try {
+      const token = localStorage.getItem("authToken");
+      const response = await axios.post(
+        "http://localhost:8080/api/appointments",
+        {
+          title,
+          description,
+          startTime,
+          endTime,
+          maxParticipants: maximum,
+          createdBy,
+          phoneNumber,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // JWT 토큰을 헤더에 추가
+          },
+        }
+      );
+
+      if (response.data.isSuccess) {
+        // 약속 생성 성공 시 PromiseSuccess 페이지로 이동
+        navigate("/pages/PromiseSuccess");
+      } else {
+        alert("약속 생성 실패");
+      }
+    } catch (error) {
+      console.error("Error creating appointment", error);
+      alert("약속 생성 중 오류가 발생했습니다.");
     }
 
     // 데이터베이스로 전송 (추후 구현)
     console.log("Form Data:", formData);
 
     // PromiseSuccess으로 이동
-    navigate("/pages/PromiseSuccess");
+    // navigate("/pages/PromiseSuccess"); // 중복된 navigate 호출 제거
   };
 
   return (
