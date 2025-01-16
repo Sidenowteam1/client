@@ -71,6 +71,19 @@ const Promise02 = () => {
               className="input-box"
             />
           </div>
+
+          {/*인원 설정 입력 */}
+          <div className="form-item">
+            <div className="label">👥 인원 수 입력</div>
+            <input
+              type="text"
+              name="location"
+              placeholder="5"
+              value={formData.location}
+              onChange={handleInputChange}
+              className="input-box"
+            />
+          </div>
         </div>
 
         {/* 약속 만들기 버튼 */}
