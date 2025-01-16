@@ -77,9 +77,9 @@ const Promise02 = () => {
             <div className="label">👥 인원 수 입력</div>
             <input
               type="text"
-              name="location"
+              name="maximum"
               placeholder="5"
-              value={formData.location}
+              value={formData.max}
               onChange={handleInputChange}
               className="input-box"
             />
