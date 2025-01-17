@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../public/css/Promise02.css";
 import axios from "axios";
-
+import base64 from "base-64";
 const Promise02 = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -46,9 +46,15 @@ const Promise02 = () => {
 
     // API 호출
     try {
-      const token = localStorage.getItem("authToken");
+      const accessToken = localStorage.getItem("accessToken");
+      let payload = accessToken.substring(
+        accessToken.indexOf(".") + 1,
+        accessToken.lastIndexOf(".")
+      );
+      let dec = JSON.parse(base64.decode(payload));
+
       const response = await axios.post(
-        "http://localhost:8080/api/appointments",
+        `http://localhost:8080/api/appointments/create/${dec.sub}`,
         {
           title,
           description,
@@ -60,11 +66,10 @@ const Promise02 = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // JWT 토큰을 헤더에 추가
+            Authorization: `Bearer ${accessToken}`, // JWT 토큰을 헤더에 추가
           },
         }
       );
-
       if (response.data.isSuccess) {
         // 약속 생성 성공 시 PromiseSuccess 페이지로 이동
         navigate("/pages/PromiseSuccess");

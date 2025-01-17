@@ -5,6 +5,12 @@ import "../public/css/Main.css";
 
 // Header 컴포넌트
 const Header = () => {
+  const navigate = useNavigate();
+  const logout = () => {
+    navigate("/pages/Login");
+    localStorage.clear("accessToken");
+    localStorage.clear("refreshToken");
+  };
   return (
     <header className="header">
       <nav className="nav">
@@ -24,9 +30,9 @@ const Header = () => {
           <div className="welcome">
             '<b>육하원칙</b>'님 환영합니다
           </div>
-          <a href="/pages/SignUp" className="link">
+          <button className="link" onClick={logout}>
             로그아웃
-          </a>
+          </button>
         </div>
       </nav>
     </header>

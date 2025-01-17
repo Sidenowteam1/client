@@ -1,40 +1,40 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; // axios 임포트
 import "../public/css/Promise01.css";
 
 const Promise01 = () => {
   const navigate = useNavigate();
 
-  // Mock 데이터 (추후 API로 대체)
-  const promises = [
-    {
-      id: 1,
-      dDay: "D-Day",
-      date: "📅 11월 24일 일요일 오후 4:00",
-      location: "📍가락시장 3번 출구",
-      totalPeople: 3,
-      currentPeople: 3,
-    },
-    {
-      id: 2,
-      dDay: "D-01",
-      date: "📅 11월 25일 월요일 오후 1:00",
-      location: "📍○○시장",
-      totalPeople: 5,
-      currentPeople: 3,
-    },
-    {
-      id: 3,
-      dDay: "D-08",
-      date: "📅 12월 02일 월요일 오후 6:00",
-      location: "📍××시장",
-      totalPeople: 3,
-      currentPeople: 1,
-    },
-  ];
-
+  // 상태 설정
   const [searchInput, setSearchInput] = useState("");
-  const [filteredPromises, setFilteredPromises] = useState(promises);
+  const [promises, setPromises] = useState([]);
+  const [filteredPromises, setFilteredPromises] = useState([]);
+  const [user, setUser] = useState("user2");
+
+  // 컴포넌트가 처음 마운트될 때 API 호출
+  useEffect(() => {
+    const fetchPromises = async () => {
+      try {
+        const accessToken = localStorage.getItem("accessToken");
+        const response = await axios.get(
+          "http://localhost:8080/api/appointments/",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`, // JWT 토큰을 헤더에 추가
+            },
+          }
+        );
+
+        console.log(response.data);
+
+        setFilteredPromises(response.data);
+      } catch (error) {
+        console.error("약속 목록을 가져오는 데 실패했습니다:", error);
+      }
+    };
+    fetchPromises();
+  }, []);
 
   // 검색 실행
   const handleSearch = () => {
@@ -48,9 +48,39 @@ const Promise01 = () => {
     setFilteredPromises(results);
   };
 
-  // "신청" 버튼 클릭 시 alert 표시
-  const handleApply = () => {
-    alert("신청 완료!"); // "신청 완료!" 메시지 표시
+  // "신청" 버튼 클릭 시 API POST 요청을 보내는 함수
+  const handleApply = (appointmentId) => {
+    axios
+      .post(
+        `http://localhost:8080/api/appointments/${appointmentId}/join?username=${user}`
+      )
+      .then((response) => {
+        alert("신청 완료!");
+        setPromises((prevPromises) =>
+          prevPromises.map((promise) =>
+            promise.id === appointmentId
+              ? {
+                  ...promise,
+                  currentParticipants: promise.currentParticipants + 1,
+                }
+              : promise
+          )
+        );
+        setFilteredPromises((prevPromises) =>
+          prevPromises.map((promise) =>
+            promise.id === appointmentId
+              ? {
+                  ...promise,
+                  currentParticipants: promise.currentParticipants + 1,
+                }
+              : promise
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("신청 실패:", error);
+        alert("신청에 실패했습니다.");
+      });
   };
 
   return (
@@ -58,38 +88,38 @@ const Promise01 = () => {
       <div className="rectangle-box">
         <div className="promise-container">
           <div className="promise-content">
-            <div className="promise-list">
+            {/* <div className="promise-list">
               {filteredPromises.map((promise) => (
                 <div className="promise-card" key={promise.id}>
-                  <div className="d-day">{promise.dDay}</div>
+                  <div className="d-day">{promise.dateStatus}</div>
                   <div className="left-section">
                     <div>{promise.date}</div>
                     <div>{promise.location}</div>
                   </div>
                   <div className="right-section">
-                    <div>총 인원: {promise.totalPeople}</div>
-                    <div>현재 인원: {promise.currentPeople}</div>
+                    <div>총 인원: {promise.maxParticipants}</div>
+                    <div>현재 인원: {promise.currentParticipants}</div>
                   </div>
                   <button
                     className={`promise-btn ${
-                      promise.totalPeople === promise.currentPeople
+                      promise.maxParticipants === promise.currentParticipants
                         ? "closed"
                         : "apply"
                     }`}
                     onClick={
-                      promise.totalPeople !== promise.currentPeople
-                        ? handleApply
-                        : undefined // "신청" 버튼 클릭 시 동작
+                      promise.maxParticipants !== promise.currentParticipants
+                        ? () => handleApply(promise.id)
+                        : undefined
                     }
                   >
-                    {promise.totalPeople === promise.currentPeople
+                    {promise.maxParticipants === promise.currentParticipants
                       ? "마감"
                       : "신청"}
                   </button>
                 </div>
               ))}
               {filteredPromises.length === 0 && <p>검색 결과가 없습니다.</p>}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

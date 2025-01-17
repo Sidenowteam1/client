@@ -42,8 +42,12 @@ const Login = () => {
       // 서버 응답 출력
       console.log("서버 응답:", response.data); // 서버에서 반환한 토큰 정보 출력
 
-      const token = response.data.data.accessToken; // 서버 응답에서 토큰 추출
-      localStorage.setItem("authToken", token); // 토큰을 로컬스토리지에 저장
+      const accessToken = response.data.data.accessToken; // 서버 응답에서 토큰 추출
+      const refreshToken = response.data.data.refreshToken; // 서버 응답에서 토큰 추출
+
+      localStorage.setItem("accessToken", accessToken); // 토큰을 로컬스토리지에 저장
+      localStorage.setItem("refreshToken", refreshToken); // 토큰을 로컬스토리지에 저장
+      // localStorage.setItem("userId");
 
       navigate("/pages/MainPage"); // 페이지 이동
     } catch (err) {
