@@ -48,7 +48,7 @@ const Promise01 = () => {
     setFilteredPromises(results);
   };
 
-  // "신청" 버튼 클릭 시 API POST 요청을 보내는 함수
+  // "신청" 버튼 클릭 시 API POST 요청을 보내는 함수s
   const handleApply = (appointmentId) => {
     axios
       .post(
