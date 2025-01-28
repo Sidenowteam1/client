@@ -1,0 +1,59 @@
+.signup_container {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  height: 100vh;
+}
+
+.signup_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbeddc;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 400px;
+  border: 3px solid #f57c00;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.signup_form img {
+  margin: 0 auto 30px;
+  width: 60%;
+}
+
+.signup_form input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.email_input_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.email_input {
+  flex: 1;
+}
+
+.id_check {
+  background-color: #ccc;
+  color: #666;
+}
+
+.signup_button:hover {
+  background-color: #f6aa66;
+}

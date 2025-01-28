@@ -1,0 +1,97 @@
+.promise02-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdf2e9;
+  margin-top: 10%;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 650px;
+  background: #fbecdb;
+  border: 2px solid #f5a971;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+  height: auto;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  background-color: #f5a971;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+select {
+  height: 50px; /* 기존 input-box와 동일한 높이 */
+  width: 400px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+
+.input-box {
+  height: 30px;
+  width: 400px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-box::placeholder {
+  color: #aaa;
+}
+
+.input-box:focus {
+  border: 2px solid #f5a971;
+  outline: none;
+  box-shadow: 0 0 6px rgba(245, 169, 113, 0.5);
+}
+
+.submit-btn {
+  width: 170px;
+  height: 60px;
+  background: #f28500;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+  background: #d97300;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}

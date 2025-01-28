@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import "../public/css/HeaderMember.css";
 import styles from "../public/css/HeaderMember.module.css";
 
 <img src="/images/mainlogo.png" alt="mainlogo" />;
@@ -22,10 +23,10 @@ const Header = () => {
           <Link to="../pages/MyPromise" className={styles.link}>
             나의 약속
           </Link>
-          <div className="welcome">
+          <div class="welcome">
             '<b>육하원칙</b>'님 환영합니다
           </div>
-          <Link to="../pages/Login" className={styles.link}>
+          <Link to="../pages/MainPage" className={styles.link}>
             <button>로그아웃</button>
           </Link>
         </div>
